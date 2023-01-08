@@ -1,6 +1,6 @@
 ## Dike Demo
 Dike Demo is a front-end demonstration for the [paper](https://github.com/DBHammer/Dike) "How Good is the Distributed Databases in Supporting Transaction Processing.
-It is forked from [material-kit-react](https://github.com/devias-io/material-kit-react). Please refer to the [back-end](https://code.alipay.com/zhanghuidong.zhd/dike-demo-backend) project for the complete user experience of dike demonstration.
+It is forked from [material-kit-react](https://github.com/devias-io/material-kit-react). Dike Demo listen to the backend service on `localhost:4000`. Please refer to the [back-end](https://github.com/HoniiTro19/dike-demo-backend) project for the complete user experience of dike demonstration.
 
 ## Quick start
 
