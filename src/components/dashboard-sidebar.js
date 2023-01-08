@@ -2,21 +2,20 @@ import { useEffect } from 'react';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
-import { Box, Button, Divider, Drawer, Typography, useMediaQuery } from '@mui/material';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import { Box, Divider, Drawer, Typography, useMediaQuery } from '@mui/material';
 import { ChartBar as ChartBarIcon } from '../icons/chart-bar';
 import { Cog as CogIcon } from '../icons/cog';
 import { Lock as LockIcon } from '../icons/lock';
-import { Selector as SelectorIcon } from '../icons/selector';
 import { ShoppingBag as ShoppingBagIcon } from '../icons/shopping-bag';
 import { User as UserIcon } from '../icons/user';
 import { UserAdd as UserAddIcon } from '../icons/user-add';
 import { Users as UsersIcon } from '../icons/users';
 import { XCircle as XCircleIcon } from '../icons/x-circle';
+import { Histories as HistoriesIcon } from '../icons/histories';
 import { Logo } from './logo';
 import { NavItem } from './nav-item';
 
-const items = [
+const itemsBackup = [
   {
     href: '/',
     icon: (<ChartBarIcon fontSize="small" />),
@@ -59,6 +58,19 @@ const items = [
   }
 ];
 
+const items = [
+  {
+    href: '/',
+    icon: (<CogIcon fontSize="small" />),
+    title: 'Properties'
+  },
+  {
+    href: '/histories',
+    icon: (<HistoriesIcon fontSize="small" />),
+    title: 'Histories'
+  }
+];
+
 export const DashboardSidebar = (props) => {
   const { open, onClose } = props;
   const router = useRouter();
@@ -91,19 +103,19 @@ export const DashboardSidebar = (props) => {
         }}
       >
         <div>
-          <Box sx={{ p: 3 }}>
+          <Box align="center"
+               sx={{ p: 3 }}
+          >
             <NextLink
               href="/"
               passHref
             >
-              <a>
-                <Logo
-                  sx={{
-                    height: 42,
-                    width: 42
-                  }}
-                />
-              </a>
+              <Logo
+                sx={{
+                  height: 42,
+                  width: 42
+                }}
+              />
             </NextLink>
           </Box>
           <Box sx={{ px: 2 }}>
@@ -121,27 +133,19 @@ export const DashboardSidebar = (props) => {
             >
               <div>
                 <Typography
+                  align="center"
                   color="inherit"
                   variant="subtitle1"
                 >
-                  Acme Inc
+                  Dike
                 </Typography>
                 <Typography
                   color="neutral.400"
                   variant="body2"
                 >
-                  Your tier
-                  {' '}
-                  : Premium
+                  Distributed Transactional Databases Test Suit
                 </Typography>
               </div>
-              <SelectorIcon
-                sx={{
-                  color: 'neutral.500',
-                  width: 14,
-                  height: 14
-                }}
-              />
             </Box>
           </Box>
         </div>
@@ -169,17 +173,33 @@ export const DashboardSidebar = (props) => {
           }}
         >
           <Typography
+            align="center"
             color="neutral.100"
             variant="subtitle2"
           >
-            Need more features?
+            Cooperations
           </Typography>
           <Typography
             color="neutral.500"
             variant="body2"
           >
-            Check out our Pro solution template.
+            East China Normal University × OceanBase
           </Typography>
+          <Box
+            sx={{
+              display: 'flex',
+              mt: 2,
+              mx: 'auto',
+              width: '80px',
+              '& img': {
+                width: '100%'
+              }
+            }}
+          >
+            <img
+              src="/static/images/East_China_Normal_University_logo.svg.png"
+            />
+          </Box>
           <Box
             sx={{
               display: 'flex',
@@ -192,25 +212,9 @@ export const DashboardSidebar = (props) => {
             }}
           >
             <img
-              alt="Go to pro"
-              src="/static/images/sidebar_pro.png"
+              src="/static/images/oceanbase.svg"
             />
           </Box>
-          <NextLink
-            href="https://material-kit-pro-react.devias.io/"
-            passHref
-          >
-            <Button
-              color="secondary"
-              component="a"
-              endIcon={(<OpenInNewIcon />)}
-              fullWidth
-              sx={{ mt: 2 }}
-              variant="contained"
-            >
-              Pro Live Preview
-            </Button>
-          </NextLink>
         </Box>
       </Box>
     </>

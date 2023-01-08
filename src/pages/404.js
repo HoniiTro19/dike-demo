@@ -3,11 +3,11 @@ import NextLink from 'next/link';
 import { Box, Button, Container, Typography } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-const NotFound = () => (
+const Page = () => (
   <>
     <Head>
       <title>
-        404 | Material Kit
+        404 | Dike Test Suit
       </title>
     </Head>
     <Box
@@ -32,14 +32,14 @@ const NotFound = () => (
             color="textPrimary"
             variant="h1"
           >
-            404: The page you are looking for isn’t here
+            404: The page you are looking for isn’t ready for access
           </Typography>
           <Typography
             align="center"
             color="textPrimary"
             variant="subtitle2"
           >
-            You either tried some shady route or you came here by mistake.
+            You either tried to get some pending/error test results or you came here by mistake.
             Whichever it is, try using the navigation
           </Typography>
           <Box sx={{ textAlign: 'center' }}>
@@ -55,7 +55,7 @@ const NotFound = () => (
             />
           </Box>
           <NextLink
-            href="/"
+            href="/histories"
             passHref
           >
             <Button
@@ -64,7 +64,7 @@ const NotFound = () => (
               sx={{ mt: 3 }}
               variant="contained"
             >
-              Go back to dashboard
+              Go back to Test Histories
             </Button>
           </NextLink>
         </Box>
@@ -73,4 +73,4 @@ const NotFound = () => (
   </>
 );
 
-export default NotFound;
+export default Page;

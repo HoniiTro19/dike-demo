@@ -11,9 +11,19 @@ export const theme = createTheme({
     }
   },
   components: {
+    MuiTableCell: {
+      defaultProps: {
+        sx: {
+          fontSize: 17,
+        }
+      }
+    },
     MuiButton: {
       defaultProps: {
-        disableElevation: true
+        disableElevation: true,
+        sx: {
+          fontSize: 17,
+        }
       },
       styleOverrides: {
         root: {
@@ -63,6 +73,7 @@ export const theme = createTheme({
           variant: 'body2'
         }
       },
+
       styleOverrides: {
         root: {
           padding: '32px 24px'
@@ -100,7 +111,20 @@ export const theme = createTheme({
         }
       }
     },
+    MuiInputLabel: {
+      defaultProps: {
+        sx: {
+          fontSize: 25,
+          color: '#5048E5'
+        },
+      },
+    },
     MuiOutlinedInput: {
+      defaultProps: {
+        sx: {
+          fontSize: 20,
+        }
+      },
       styleOverrides: {
         notchedOutline: {
           borderColor: '#E6E8F0'
@@ -129,6 +153,13 @@ export const theme = createTheme({
           }
         }
       }
+    },
+    MuiFormControlLabel: {
+      defaultProps: {
+        sx: {
+          fontSize: 30,
+        },
+      },
     }
   },
   palette: {
